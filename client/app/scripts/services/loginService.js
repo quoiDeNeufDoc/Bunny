@@ -52,12 +52,14 @@ angular.module('clientApp').service('loginService', [
 			});*/
         		window.setTimeout(function() {
         			var persons = new Array();
-        			var person = {firstName : "Kiki", lastName: "fiki"};
-        			var person2 = {firstName : "Kiki2", lastName: "fiki2"};
-        			var person3 = {firstName : "Kiki3", lastName: "fiki3"};
+        			var person = {firstName : "Mathieu", lastName: "Cordebard"};
+        			var person2 = {firstName : "Dobromir", lastName: "Nikolov"};
+        			var person3 = {firstName : "Cedric", lastName: "Simon"};
+        			var person4 = {firstName : "Emmanuel", lastName: "Helbert"};
         			persons.push(person);
         			persons.push(person2);
         			persons.push(person3);
+        			persons.push(person4);
         			deferred.resolve(persons);
         		}, 3000);
 
