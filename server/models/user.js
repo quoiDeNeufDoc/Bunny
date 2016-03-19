@@ -6,6 +6,6 @@ module.exports = mongoose.model('User', {
 	firstname: String,
 	lastname: String,
 	secuId: String,
-	email: String,
+	closeRelatives: {type: Array},
 	token: String
 });
