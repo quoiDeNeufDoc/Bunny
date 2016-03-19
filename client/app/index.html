@@ -13,7 +13,6 @@
     <!-- build:css(.tmp) styles/main.css -->
     <!-- endbuild -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/timeline.scss">
   </head>
   <body ng-app="clientApp">
     <!--[if lte IE 8]>
@@ -40,6 +39,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/about">About</a></li>
               <!-- <li><a ng-href="#/">Contact</a></li> -->
             </ul>
           </div>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="container">
-    <div style="height: 100%" ng-view=""></div>
+    <div ng-view=""></div>
     </div>
 
     <div class="footer">
