@@ -1,12 +1,5 @@
-<!-- <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div> -->
-<div class="login-form-container" ng-controller="MainCtrl">
+
+<!-- <div class="login-form-container" ng-controller="MainCtrl">
   <div id="logincard" class="flip-container">
         <div class="flipper">
           <div class="front frontLost">
@@ -27,20 +20,43 @@
               <button type="submit" class="btn btn-default" ng-click="sendActivationCode(user)">Submit</button>
             </form>
           </div>
-</div>
-
-<!-- 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div> -->
+
+
+<div ng-controller="MainCtrl">
+  <div id="logincard" class="login-container">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input class="form-control" id="firstName" placeholder="First Name" ng-model="user.firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input class="form-control" id="lastName" placeholder="Last name" ng-model="user.lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="telNumber">Telephone number</label>
+        <input class="form-control" id="telNumber" placeholder="Your number" ng-model="user.phone">
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input class="form-control" type="date" id="date"  ng-model="user.date" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Doctor</label> 
+        <input class="form-control" id="doctor" ng-model="user.doctor" required>
+      </div>
+      <div class="form-group">
+        <label >Type operation</label>
+        <select class="form-control" ng-model="user.typeOperation">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="sendForm(user)">Submit</button>
+    </form>
+  </div>
+</div>

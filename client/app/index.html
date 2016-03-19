@@ -11,8 +11,10 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../bower_components/angular-timeline/dist/angular-timeline-bootstrap.css">
+    <link rel="stylesheet" href="../bower_components/angular-timeline/dist/angular-timeline.css">
   </head>
   <body ng-app="clientApp">
     <!--[if lte IE 8]>
@@ -80,6 +82,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -87,8 +90,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/MyUserCtrl.js"></script>
-        <script src="scripts/services/loginService.js"></script> 
-         <script src="scripts/services/localStorageService.js"></script> 
-        <!-- endbuild -->
+        <script src="scripts/controllers/timeline.js"></script>
+        <script src="scripts/services/loginService.js"></script>
+        <script src="scripts/services/localStorageService.js"></script>
+
+
+        <script src="scripts/models/person.js"></script>   
+    <!-- endbuild -->
 </body>
 </html>
