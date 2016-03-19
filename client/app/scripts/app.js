@@ -25,9 +25,7 @@ angular
         controllerAs: 'main'
       })
       .when('/myUser', {
-        templateUrl: 'views/myUser.html',
-         controller: 'MyUserCtrl',
-        controllerAs: 'MyUserCtrl'
+        templateUrl: 'views/myUser.html'
       })
       .otherwise({
         redirectTo: '/'

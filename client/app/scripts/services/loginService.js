@@ -131,7 +131,10 @@ angular.module('clientApp').service('loginService', [
 			$http({ 
 				method: 'POST',
 				url: that.url+'/api/users/v1.0/users',
-				headers: { 	'Accept': 'application/json'},
+				headers: { 	
+					'Accept': 'application/json',
+					'Authorization': 'Bearer '+ that.user.token
+				},
 				data: user
 			})
 			// Handle success response

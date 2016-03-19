@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
  
-angular.module('clientApp').controller('MyUserCtrl',
+angular.module('clientApp').controller('MyUserCtrl', [
 	'$scope',
 	'loginService',
 
@@ -34,4 +34,6 @@ angular.module('clientApp').controller('MyUserCtrl',
 	    		console.error('[MyUserCtrl] updateUserDetails error');
 	    	});
 	    }
-  });
+	}
+
+  ]);
