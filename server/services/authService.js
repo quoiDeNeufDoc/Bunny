@@ -22,6 +22,7 @@ app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res,
 	.then(function(user) {
 		if (user) {
 			console.log('[AUTH_SERVICE] -- Already registered user');
+			return Promise.resolve();
 		}
 		else {
 			console.log('[AUTH_SERVICE] -- Create user in DB');
@@ -30,24 +31,26 @@ app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res,
 		}
 	})
 	.then(function() {
-		res.status(200).end({phone:phone, token:token});
+		console.log('[AUTH_SERVICE] -- Send 200 success response');
+		res.status(200).send({phone:phone, token:token}).end();
+		return Promise.resolve();
 	})
 	.catch(function(error) {
-		res.status(400).end({details:'Impossible to create user'});
+		console.error('[AUTH_SERVICE] -- Send 400 error response');
+		res.status(400).send({details:'Impossible to create user'}).end();
 	});
 });
 
 
 app.get('/api/authenticate/v1.0/login', function (req, res, next) {
 
-	console.log("[AUTH_SERVICE] /api/authenticate/v1.0/login");
+	console.log("[AUTH_SERVICE] Receive /api/authenticate/v1.0/login");
 
 	passport.authenticate('basic', function (err, user) {
 		if (err) return res.status(401).json({ message: err });
-		console.log("[AUTH_SERVICE] encode authentication token for user " + user.login);
-		var token = jwt.encode({ username: user.login}, tokenSecret);
-		res.status(200).json({ token : token, user: user, supportEmail: supportEmail });
-
+		console.log('[AUTH_SERVICE] -- Encode authentication token for user "' + user.phone + '"');
+		var token = jwt.encode({ phone: user.phone}, tokenSecret);
+		res.status(200).json({ token : token, user: user });
 	})(req, res, next);
 });
 

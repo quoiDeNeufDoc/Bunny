@@ -10,6 +10,7 @@ var logger = require("morgan");
 var serveStatic = require('serve-static');
 var session = require('express-session');
 var jwt = require('jwt-simple');
+var userService = require('./userService');
 var UserModel = require('../models/user');
 
 var app = express();
@@ -41,30 +42,33 @@ var start = function (httpConfig) {
 		});
 
 		console.log("[HTTP_SERVICE] -- Define BasicStrategy");
-		/*passport.use(new BasicStrategy (
+		passport.use(new BasicStrategy (
 			function(phone, token, done) {
 				try {
-					UserModel.findOne( { phone: phone }, 'phone token',
-						function (err, user) {
-							if (user) {
-								if (user.token != token) {
-									console.log("[HTTP_SERVICE] checkUserAuth('" + phone + "') wrongToken");
-									return done('wrongToken', null);
-								}
-								console.log("[HTTP_SERVICE] checkUserAuth('" + phone + "') success");
-								return done(false, user);
+					userService.getUser({ phone: phone }, 'phone token')
+					.then(function(user) {
+						if (user) {
+							if (user.token != token) {
+								console.log("[HTTP_SERVICE] -- BasicStrategy checkUserAuth('" + phone + "') wrongToken");
+								return done('wrongToken', null);
 							}
-							console.log("[HTTP_SERVICE] checkUserCredentials('" + phone + "') wrong user");
-							return done("wrongUser", null);	
+							console.log("[HTTP_SERVICE] -- BasicStrategy checkUserAuth('" + phone + "') success");
+							return done(false, user);
 						}
-					);
+						console.log("[HTTP_SERVICE] -- BasicStrategy checkUserCredentials('" + phone + "') wrong user");
+						return done("wrongUser", null);	
+					})
+					.catch(function(error) {
+						console.error("[HTTP_SERVICE] -- BasicStrategy error " + error.message);
+        				return done(null, false);
+					})
 				}
 				catch (err) {
-					console.error("[BasicStrategy] error " + err);
+					console.error("[HTTP_SERVICE] -- BasicStrategy error " + err);
         			return done(null, false); //returns a 401 to the caller
         		}
         	}
-        ));*/
+        ));
 
 		// Start the http server
 		var server = http.createServer(app).listen(app.get('port'), function() {
