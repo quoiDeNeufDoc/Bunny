@@ -1,5 +1,6 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 .browsehappy {
@@ -87,4 +88,14 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.login-form-container {
+  width: 300px;
+  text-align: left;
+  margin: auto;
+}
+
+.login-telephone {
+  width: 250px;
 }
