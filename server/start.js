@@ -16,8 +16,9 @@ httpService.start(config.http).
 then(function() {
 	// Declare micro-services
 	require('./services/authService');
-	require('./services/messageService');
+	require('./services/messageService');	
 	require('./services/userService');
+	require('./services/timelineService');
 
 });
 

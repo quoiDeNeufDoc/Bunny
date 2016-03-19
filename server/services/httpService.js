@@ -75,8 +75,10 @@ var start = function (httpConfig) {
 			function(token, done) {
 				try {
         			// We attempt to decode the token the user sends with his requests
+        			console.log("decode "+token);
         			var decoded = jwt.decode(token, tokenSecret);
         			var phone = decoded.phone;
+        			console.log("decode "+phone);
 
         			dbService.getUser({ phone: phone }, 'phone token')
         			.then(function(user) {
