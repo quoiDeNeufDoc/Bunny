@@ -1,16 +1,16 @@
 <timeline>
   <!-- can also hard-code to side="left" or side="right" -->
-  <timeline-event ng-repeat="event in events" side="right">
+  <timeline-event ng-repeat="event in events" side="left">
     <!-- uses angular-scroll-animate to give it some pop -->
-    <timeline-badge class="{{event.badgeClass}} timeline-hidden"
-                    when-visible="animateElementIn" when-not-visible="animateElementOut">
-      <i class="glyphicon {{event.badgeIconClass}}"></i>
+
+    <timeline-badge class="tpoint" when-visible="animateElementIn" when-not-visible="animateElementOut">
     </timeline-badge>
 
     <!-- uses angular-scroll-animate to give it some pop -->
     <timeline-panel class="{{event.badgeClass}} timeline-hidden"
                     when-visible="animateElementIn" when-not-visible="animateElementOut">
       <timeline-heading>
+        <div width="20px" height="100%" style="width:20px; height:100%; background-color:#3C3F47;"></div>
         <h4>{{event.title}}</h4>
 
         <p ng-if="event.when">

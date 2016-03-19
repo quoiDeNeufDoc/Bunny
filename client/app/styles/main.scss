@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "timeline.scss";
 // endbower
 
 .browsehappy {
@@ -101,11 +102,10 @@ body {
   width: 250px;
 }
 
-
 .flip-container {
   perspective: 1000;
   overflow: hidden;
-} 
+}
 
 /* flip the pane when hovered */
 .flip-container.flip .flipper {
@@ -145,9 +145,8 @@ body {
   text-align:center;
 }
 
-
-
 .login-container {
   width: 350px;
   margin: auto;
 }
+
