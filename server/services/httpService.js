@@ -48,6 +48,7 @@ var start = function (httpConfig) {
 					userService.getUser({ phone: phone }, 'phone token')
 					.then(function(user) {
 						if (user) {
+							console.error("jkhjlkhjk "+token+" "+user.token)
 							if (user.token != token) {
 								console.log("[HTTP_SERVICE] -- BasicStrategy checkUserAuth('" + phone + "') wrongToken");
 								return done('wrongToken', null);

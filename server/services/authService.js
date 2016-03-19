@@ -4,6 +4,9 @@ var userService = require('./userService');
 var randomString = require("randomstring");
 
 var app = httpService.app;
+var passport = httpService.passport;
+var tokenSecret = httpService.tokenSecret;
+var jwt =  httpService.jwt;
 
 console.log("[AUTH_SERVICE] ==== STARTING ====");
 
