@@ -1,11 +1,10 @@
 div.userDetails {
 	position:relative;
 	height:100%;
-	padding-left:400px;	
 
 	#leftArea {
 		position:absolute;
-		top:0;left:0;
+		top:70px;left:0;
 		background: #373942;
 		width:400px;
 		height: 100%;
@@ -55,7 +54,7 @@ div.userDetails {
 	}
 
 	#rightArea {
-		padding: 0 25px;
+		padding: 0 25px 0 400px;
 		height: 100%
 	}
 }
