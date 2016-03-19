@@ -49,14 +49,14 @@
 .timeline li timeline-panel {
   background-color: #fff;
   float: left;
-  border: 1px solid #d4d4d4;
+  border: 0px solid #d4d4d4;
   border-left: 10px solid #3C3F47;
   margin-left: 10px;
   border-radius: 2px;
   padding: 12px;
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175); }
+  box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.6); }
 .timeline li timeline-panel:before {
   position: absolute;
   top: 25px;
@@ -226,7 +226,7 @@ img {
   top: 0;
   bottom: 0;
   position: absolute;
-  content: " ";
+  content: "";
   width: 12px;
   border: solid #3C3F47 5px;
   border-radius: 13px;

@@ -50,7 +50,6 @@ app.get('/api/users/v1.0/users', function (req, res, next) {
 			res.status(400).end();
 		}
 	});
-
 });
 
 

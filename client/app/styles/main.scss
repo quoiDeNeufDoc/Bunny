@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "timeline.scss";
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -201,5 +203,17 @@ html, body {
 
 .cancel-button {
   margin-left: 20px;
+}
+
+.qdnd-grey {
+  font-family: Roboto, sans-serif;
+  font-size: 2em;
+  color: #3C3F47;
+}
+
+.qdnd-blue {
+  font-family: Roboto, sans-serif;
+  font-size: 2em;
+  color: #75B2E2;
 }
 

@@ -1,3 +1,9 @@
+<div style="margin:auto; text-align: center;">
+  <span class="qdnd-grey">Mardi</span><span class="qdnd-blue"> 22</span><span class="qdnd-grey"> mars 2016</span>
+</div>
+
+<br>
+
 <timeline>
   <!-- can also hard-code to side="left" or side="right" -->
   <timeline-event ng-repeat="event in events" side="'left'">
@@ -8,17 +14,25 @@
 
     <!-- uses angular-scroll-animate to give it some pop -->
     <timeline-panel class="timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-      <timeline-heading>
-        <div width="20px" height="100%" style="width:20px; height:100%; background-color:#3C3F47;"></div>
-        <h4>{{event.title}}</h4>
+      <div class="row">
+        <div class="col-md-3 hidden-xs" ng-if="event.icon_side === 'left'">
+          <img style="float:left; outline:12px solid #3C3F47; background-color:#3C3F47;" ng-src="images/{{event.type}}.svg" alt="Type of operation">
+        </div>
+        <div class="col-md-9 col-xs-12">
+            <span>
+            <h4>{{event.title}}</h4>
+            <p ng-if="event.date">
+              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>&nbsp;{{event.date}}</small>
+            </p>
+            <p ng-if="event.conseils" ng-bind-html="event.conseils">
+            </p>
+            </span>
+        </div>
+        <div class="col-md-3 hidden-xs" ng-if="event.icon_side === undefined || event.icon_side === 'right'">
+          <img style="float:right; outline:12px solid #75B2E2; background-color:#75B2E2;" ng-src="images/{{event.type}}.svg" alt="Type of operation">
+        </div>
+      </div>
 
-        <p ng-if="event.date">
-          <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.date}}</small>
-        </p>
-        <p ng-if="event.conseils" ng-bind-html="event.conseils">
-        </p>
-      </timeline-heading>
-      <p ng-bind-html="event.contentHtml"></p>
     </timeline-panel>
   </timeline-event>
 </timeline>
