@@ -14,7 +14,30 @@ angular.module('clientApp').controller('MainCtrl', [
 
 
 	function($scope, loginService, localStorage) {
-		$scope.user = {};
+		$scope.persons = {};
+
+		$scope.isLoading = true;
+		$scope.chosenPerson = null;
+
+		loginService.getUsers()
+    	.then(function(persons) {	
+    		console.log("Got persons");
+			console.log(persons);
+
+			$scope.persons = persons;
+			$scope.isLoading = false;
+
+		})
+		.catch(function (error) {
+			console.error("[MainCtrl] getUsers error");
+		});
+
+
+		$scope.seePersonDetails = function(person) {
+			console.log(person);
+			$scope.chosenPerson = person;
+			document.querySelector("#logincard").classList.toggle("flip");
+		}
 
     	/*$scope.sendLoginForm = function(user) {
     		console.log("[MainCtrl] send login form");
@@ -52,8 +75,20 @@ angular.module('clientApp').controller('MainCtrl', [
     		})
     	}*/
 
-    	$scope.sendForm = function(user) {
-    		$scope.user = user;
-    		console.log($scope.user);
+    	$scope.sendForm = function(chosenPerson) {
+    		console.log(chosenPerson);
+
+    		var index = $scope.persons.indexOf(chosenPerson);
+    		if (index !== -1) {
+    			$scope.persons[index] = chosenPerson;
+    			$scope.persons[index].isInit = true;
+    		}
+
+    		document.querySelector("#logincard").classList.toggle("flip");
+    	}
+
+    	$scope.cancel = function() {
+    		$scope.chosenPerson = null;
+    		document.querySelector("#logincard").classList.toggle("flip");
     	}
 }]);
