@@ -4,25 +4,92 @@ angular.module('clientApp')
 
 .controller('TimelineCtrl', function ($scope) {
 
-    $scope.events = [{
-      badgeClass: 'info',
-      badgeIconClass: 'glyphicon-check',
-      title: 'First heading',
-      when: '11 hours ago via Twitter',
-      content: 'Some awesome content.'
-    }, {
-      badgeClass: 'warning',
-      badgeIconClass: 'glyphicon-credit-card',
-      title: 'Second heading',
-      when: '12 hours ago via Twitter',
-      content: 'More awesome content.'
-    }, {
-      badgeClass: 'default',
-      badgeIconClass: 'glyphicon-credit-card',
-      title: 'Third heading',
-      titleContentHtml: '<img class="img-responsive" src="http://www.freeimages.com/assets/183333/1833326510/wood-weel-1444183-m.jpg">',
-      contentHtml: "Hello how are you",
-      footerContentHtml: '<a href="">Continue Reading</a>'
-    }];
+    $scope.events = [
+
+      {
+        type:"exam_biologie",
+        title:"Prise de sang",
+        date:"J-15",
+        conseils:"Emmener l'ordonnance",
+        localisation:"",
+        contact:""
+      },
+
+      {
+        type:"rdv_medic",
+        title:"Consultation Anesthésie",
+        date:"J-10",
+        conseils:"Emmener résultats prise de sang",
+        localisation:"",
+        contact:""
+      },
+
+      {
+        type:"rdv_medic",
+        title:"Préadmission",
+        date:"J-1",
+        conseils:"Emmener carte nationale d'identité et carte vitale",
+        localisation:"",
+        contact:""
+      },
+
+      {
+        type:"prep_soap_shower",
+        title:"Douche",
+        date:"J-0",
+        conseils:"Douche savon standard",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"empty_stomac",
+        title:"A jeun",
+        date:"J-0 6H",
+        conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"prep_beta_shower",
+        title:"Douche et shampoing Bétadine",
+        date:"J-0 10H",
+        conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"intervention",
+        title:"Intervention cataracte",
+        date:"J-0 15h",
+        conseils:"",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"exit",
+        title:"Sortie",
+        date:"J-0 15H",
+        conseils:"",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"rdv_medic",
+        title:"Consultation ophtalmo controle",
+        date:"J1 9H",
+        conseils:"",
+        localisation:"",
+        contact:""
+      },
+      {
+        type:"rdv_medic",
+        title:"Consultation ophtalmo decontrole",
+        date:"J+30 9H",
+        conseils:"",
+        localisation:"",
+        contact:""
+      }
+      
+    ];
   }
 );

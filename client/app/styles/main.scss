@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "timeline.scss";
 // endbower
 
 .browsehappy {
@@ -118,11 +119,10 @@ html, body {
   width: 250px;
 }
 
-
 .flip-container {
   perspective: 1000;
   overflow: hidden;
-} 
+}
 
 /* flip the pane when hovered */
 .flip-container.flip .flipper {
@@ -172,14 +172,12 @@ html, body {
   top: 0;
   background-color: white;
 }
-
 .loading-screen > img {
   display: block;
   margin: auto;
   width: 100%;
   height: 100%;
 }
-
 .login-container {
   width: 350px;
   margin: auto;
@@ -223,3 +221,4 @@ html, body {
 .cancel-button {
   margin-left: 20px;
 }
+
