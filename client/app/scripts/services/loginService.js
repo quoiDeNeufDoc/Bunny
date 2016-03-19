@@ -22,7 +22,7 @@ angular.module('clientApp').service('loginService', [
 
         	var deferred = $q.defer();
 
-        	$http({ 
+        	/*$http({ 
 				method: 'GET',
 				url: that.url+'/api/users/v1.0/users',
 				headers: { 	'Accept': 'application/json'}
@@ -40,8 +40,8 @@ angular.module('clientApp').service('loginService', [
 				console.error("[LoginService] login");
 				console.error(data);
 				deferred.reject(data);
-			});
-        		/*window.setTimeout(function() {
+			});*/
+        		window.setTimeout(function() {
         			var persons = new Array();
         			var person = {firstName : "Kiki", lastName: "fiki"};
         			var person2 = {firstName : "Kiki2", lastName: "fiki2"};
@@ -50,11 +50,44 @@ angular.module('clientApp').service('loginService', [
         			persons.push(person2);
         			persons.push(person3);
         			deferred.resolve(persons);
-        		}, 3000);*/
+        		}, 3000);
 
         		console.log("YEAH");
 
         	return deferred.promise;
+        }
+
+        this.updateUser = function(person) {
+        	console.log("[LoginService] updateUser");
+			console.log(person);
+
+			
+			//var deferred = $q.defer();
+
+			// Call the authenticate webService
+			/*$http({ 
+				method: 'POST',
+				url: that.url+'/api/users/v1.0/users',
+				headers: { 	
+					'Accept': 'application/json',
+					'Authorization': 'Bearer '+ that.user.token
+				},
+				data: user
+			})
+			// Handle success response
+			.success(function (response) {
+				// Resolve the promise
+				deferred.resolve(response);
+			})
+			// Handle error response
+			.error(function (data) 
+			{
+				console.error("[LoginService] updateUser");
+				console.error(data);
+				deferred.reject(data);
+			});*/
+
+			//return deferred.promise;
         }
 
         this.encode = function (input) {
@@ -159,7 +192,7 @@ angular.module('clientApp').service('loginService', [
 			return that.user;
 		}
 
-		this.updateUser = function(user) {
+		/*this.updateUser = function(user) {
 			console.log("[LoginService] updateUser");
 			console.log(user);
 
@@ -192,6 +225,6 @@ angular.module('clientApp').service('loginService', [
 			});
 
 			return deferred.promise;
-		}
+		}*/
 	}
 ]);
