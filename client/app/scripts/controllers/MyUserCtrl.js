@@ -16,6 +16,9 @@ angular.module('clientApp').controller('MyUserCtrl', [
 	    
 	    $scope.user = loginService.getUser();
 	    $scope.isInit = false;
+	    $scope.persons = [];
+	    $scope.persons.push(new Person());
+
 	    if ($scope.user.firstName) {
 			$scope.isInit = true;
 	    }
@@ -33,6 +36,10 @@ angular.module('clientApp').controller('MyUserCtrl', [
 	    	.catch(function (error) {
 	    		console.error('[MyUserCtrl] updateUserDetails error');
 	    	});
+	    }
+
+	    $scope.addAnotherPerson = function() {
+	    	$scope.persons.push(new Person());
 	    }
 	}
 

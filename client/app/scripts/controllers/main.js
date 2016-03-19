@@ -16,7 +16,7 @@ angular.module('clientApp').controller('MainCtrl', [
 	function($scope, loginService, localStorage) {
 		$scope.user = {};
 
-    	$scope.sendLoginForm = function(user) {
+    	/*$scope.sendLoginForm = function(user) {
     		console.log("[MainCtrl] send login form");
     		console.log(user.telephone);
     		$scope.user.telephone = user.telephone;
@@ -50,5 +50,10 @@ angular.module('clientApp').controller('MainCtrl', [
     		.catch(function (error) {
     			console.error("[MainCtrl] sendActivationCode error");
     		})
+    	}*/
+
+    	$scope.sendForm = function(user) {
+    		$scope.user = user;
+    		console.log($scope.user);
     	}
 }]);
