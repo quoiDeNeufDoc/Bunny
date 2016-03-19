@@ -30,8 +30,10 @@ angular.module('clientApp').service('loginService', [
 
 			// Handle success response
 			.success(function (response) {
+				console.log(response);
 				// Resolve the promise
 				deferred.resolve(response);
+
 			})
 
 			// Handle error response
