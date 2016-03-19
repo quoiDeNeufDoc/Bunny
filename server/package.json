@@ -27,5 +27,8 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-ssh": "^0.12.3"
+  },
+"scripts": {
+    "start": "node start.js"
   }
 }

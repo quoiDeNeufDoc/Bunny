@@ -57,6 +57,7 @@ app.get('/api/authenticate/v1.0/login', function (req, res, next) {
 	})(req, res, next);
 });
 
+
 //passport.authenticate('bearer', { session: false }),
 app.post('/api/authenticate/v1.0/users',  function (req, res, next) {
 	
@@ -66,8 +67,9 @@ app.post('/api/authenticate/v1.0/users',  function (req, res, next) {
 	var secuNumber = req.body.secuNumber;
 	var closeRelatives = req.body.closeRelatives;
     var phone = "0689747249";
+    console.log(req.body);
 
-	console.log('[AUTH_SERVICE] Receive /api/authenticate/v1.0/users/ request for user "' + phone + '"');
+	console.log('[AUTH_SERVICE] Receive /api/authenticate/v1.0/users request for user "' + phone + '"');
 	userService.getUser({ phone:phone })
 	.then(function(user) {
 		user.firstName = firstName;
@@ -82,8 +84,25 @@ app.post('/api/authenticate/v1.0/users',  function (req, res, next) {
 	.catch(function(error) {
 
 	});
-	
 });
+
+
+app.post('/api/messages/v1.0/messages',  function (req, res, next) {
+	
+	var patientSecuNumber = req.body.secuNumber;
+	var message = req.body.message; 
+
+	userService.getUser({ secuId:patientSecuNumber })
+	.then(function(user) {
+		var storedMessage = { date: new Date(), body: message };
+		user.messages.push(message);
+	})
+	.catch(function(error) {
+
+	})
+	res.status(200).end();
+});
+
 
 
 console.log("[AUTH_SERVICE] ==== STARTED ====");
