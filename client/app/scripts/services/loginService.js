@@ -129,12 +129,10 @@ angular.module('clientApp').service('loginService', [
 
 			// Call the authenticate webService
 			$http({ 
-				method: 'GET',
-				withCredentials: true,
-				url: that.url+'/api/authenticate/v1.0/login',
-				headers: { 	'Authorization': 'Basic '+this.encode(user.telephone+':'+user.code), 
-							'Accept': 'application/json'
-				}
+				method: 'POST',
+				url: that.url+'/api/users/v1.0/users',
+				headers: { 	'Accept': 'application/json'},
+				data: user
 			})
 			// Handle success response
 			.success(function (response) {
