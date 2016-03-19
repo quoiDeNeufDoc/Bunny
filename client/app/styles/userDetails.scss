@@ -4,15 +4,15 @@ div.userDetails {
 
 	#leftArea {
 		position:absolute;
-		top:70px;left:0;
+		top:140px;left:20px;
 		background: #373942;
 		width:400px;
-		height: 100%;
+		height: calc(100% - 170px);
 
 		img {
 			position:absolute;
 			top:0; left:0;
-			height:700px;
+			height: 100%;
 		}
 		
 		#container {
@@ -54,12 +54,14 @@ div.userDetails {
 	}
 
 	#rightArea {
-		padding: 0 25px 0 400px;
-		height: 100%
+		margin-top: 30px;
+		padding: 0 80px 30px 500px;
+		overflow: auto;
+		height: calc(100% - 190px);
 	}
 }
 
 .top-user-details {
-	height: 60px;
-	border-bottom: 2px solid grey;
+	height: 100px;
+	border-bottom: 2px solid #D6D6D6;
 }

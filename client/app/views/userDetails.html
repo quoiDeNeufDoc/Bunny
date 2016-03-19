@@ -1,5 +1,13 @@
 <div class="userDetails" >
-	<div class="top-user-details"></div>
+	<div class="top-user-details">
+		<img ng-src="/images/intervention.svg" style="position:absolute; top:0; left: 50px; height:90px;margin:5px 15px" src="/images/intervention.svg"> <label style="position: absolute;
+    left: 160px;
+    top: 20px;
+    font-size: 19px;">Carole</label> <label style="position: absolute;
+    left: 160px;
+    top: 45px;
+    font-size: 25px;">Richard</label>
+	</div>
 	<div id="leftArea" ng-controller="userDetailsController">
 		<img ng-src="/images/bgAdmin.svg"/>
 		<div id="container">	
@@ -11,7 +19,7 @@
 			<div id="phone" class="rounder">
 				<img ng-src="/images/mobile.svg" style="height:52px;margin:15px 15px">
 				<span id='title'>Téléphone mobile</span>
-				<div id='label'><span id="blue">{{startPhone}}</span>{{lastPhone}}</div>
+				<div id='label'><span id="blue">{{startPhone}}</span>{{endPhone}}</div>
 			</div>
 			<div id="intervention" class="rounder">
 				<img ng-src="/images/intervention.svg" style="height:52px;margin:15px 15px">
