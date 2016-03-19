@@ -50,7 +50,12 @@ div.userDetails {
 	}
 
 	#rightArea {
-		padding: 25px;
+		padding: 0 25px;
 		height: 100%
 	}
+}
+
+.top-user-details {
+	height: 60px;
+	border-bottom: 2px solid grey;
 }
