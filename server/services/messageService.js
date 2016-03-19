@@ -58,6 +58,9 @@ app.post('/api/messages/v1.0/messages',  function (req, res, next) {
 		user.messages.push(message);
 		return dbService.setUser(user);
 	})
+	.then(function(user) {
+		sendNotifications(user);
+	})
 	.catch(function(error) {
 
 	})

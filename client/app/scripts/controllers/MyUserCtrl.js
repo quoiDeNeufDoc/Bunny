@@ -1,6 +1,14 @@
 'use strict';
 
-angular.module('clientApp').controller('myUserCtrl',
+/**
+ * @ngdoc function
+ * @name clientApp.controller:MyUserCtrl
+ * @description
+ * # MyUserCtrl
+ * Controller of the clientApp
+ */
+ 
+angular.module('clientApp').controller('MyUserCtrl', [
 	'$scope',
 	'loginService',
 
@@ -18,11 +26,14 @@ angular.module('clientApp').controller('myUserCtrl',
 
 	    	loginService.updateUser($scope.user)
 	    	.then(function (ok) {
-	    		console.log('[myUserCtrl] updateUserDetails success');
+	    		console.log('[MyUserCtrl] updateUserDetails success');
 	    		$scope.isInit = true;
+	    		console.log(user);
 	    	})
 	    	.catch(function (error) {
-	    		console.error('[myUserCtrl] updateUserDetails error');
+	    		console.error('[MyUserCtrl] updateUserDetails error');
 	    	});
 	    }
-  });
+	}
+
+  ]);

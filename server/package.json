@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/quoiDeNeufDoc/Bunny"
   },
-  "devDependencies": {
+  "dependencies": {
     "express": "4.13.3",
     "express-session": "1.12.1",
     "serve-static": "1.10.0",
@@ -38,5 +38,8 @@
   },
   "main": "start.js",
   "author": "",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+    "express": "~4.13.4"
+  }
 }

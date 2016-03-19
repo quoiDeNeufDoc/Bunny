@@ -26,9 +26,7 @@ angular
         controllerAs: 'main'
       })
       .when('/myUser', {
-        templateUrl: 'views/myUser.html',
-        controller: 'myUserCtrl',
-        controllerAs: 'myUser'
+        templateUrl: 'views/myUser.html'
       })
       .when('/timeline', {
         templateUrl: 'views/timeline.html',
