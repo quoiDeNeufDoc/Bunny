@@ -10,8 +10,10 @@
 angular.module('clientApp').controller('MainCtrl', [
 	'$scope', 
 	'loginService',
+	'localStorage',
 
-	function($scope, loginService) {
+
+	function($scope, loginService, localStorage) {
 		$scope.user = {};
 
     	$scope.sendLoginForm = function(user) {
@@ -40,6 +42,10 @@ angular.module('clientApp').controller('MainCtrl', [
     		.then(function(success) {
     			console.log("Activation code success !!!");
     			console.log(success);
+    			$scope.user = success.user;
+    			$scope.user.token = success.token;
+
+    			window.location.href = "http://localhost:9000/#/myUser";
     		})
     		.catch(function (error) {
     			console.error("[MainCtrl] sendActivationCode error");

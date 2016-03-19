@@ -4,12 +4,14 @@ angular.module('clientApp').service('loginService', [
 
 	'$http',
 	'$q',
-	/*'$localStorage',*/
+	'localStorage',
 
-	function ($http, $q) 
+	function ($http, $q, localStorage) 
 	{ 	
 		var that = this;
 		this.url = "http://localhost:8080";
+
+		this.user = {};
 
 		/**
          * Encodes a string in base64
@@ -17,7 +19,7 @@ angular.module('clientApp').service('loginService', [
          */
         this.encode = function (input) {
         	var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-        	
+
             var output = "";
             var chr1, chr2, chr3;
             var enc1, enc2, enc3, enc4;
@@ -96,12 +98,54 @@ angular.module('clientApp').service('loginService', [
 			// Handle success response
 			.success(function (response) {
 				// Resolve the promise
+				localStorage.set({ 'token':response.token, 'user':response.user, 'userId': response.user._id});
+				that.user = response.user;
+				that.user.token = response.token;
+
 				deferred.resolve(response);
 			})
 			// Handle error response
 			.error(function (data) 
 			{
 				console.error("[LoginService] login");
+				console.error(data);
+				deferred.reject(data);
+			});
+
+			return deferred.promise;
+		}
+
+		this.getUser = function() {
+			return that.user;
+		}
+
+		this.updateUser = function(user) {
+			console.log("[LoginService] updateUser");
+			console.log(user);
+
+			that.user = user;
+
+			var deferred = $q.defer();
+
+			// Call the authenticate webService
+			$http({ 
+				method: 'GET',
+				withCredentials: true,
+				url: that.url+'/api/authenticate/v1.0/login',
+				headers: { 	'Authorization': 'Basic '+this.encode(user.telephone+':'+user.code), 
+							'Accept': 'application/json'
+				}
+			})
+			// Handle success response
+			.success(function (response) {
+				// Resolve the promise
+
+				deferred.resolve(response);
+			})
+			// Handle error response
+			.error(function (data) 
+			{
+				console.error("[LoginService] updateUser");
 				console.error(data);
 				deferred.reject(data);
 			});

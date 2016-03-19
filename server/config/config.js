@@ -7,5 +7,10 @@ module.exports =
 	'http': { 
 		'port': 8080,
 		'allowedOrigins': [ 'http://localhost:80', 'https://localhost:80', 'http://localhost:9000']
+	},
+	'emailServer':
+	{
+		service: 'Gmail',
+		auth: { user: 'quoideneuf.ned@gmail.com', pass: 'C@rotte67' }
 	}
 };
