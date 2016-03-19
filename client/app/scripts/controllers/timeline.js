@@ -7,7 +7,7 @@ angular.module('clientApp')
     $scope.events = [
 
       {
-        type:"exam_biologie",
+        type:"examen",
         title:"Prise de sang",
         date:"J-15",
         conseils:"Emmener l'ordonnance",
@@ -16,7 +16,7 @@ angular.module('clientApp')
       },
 
       {
-        type:"rdv_medic",
+        type:"consultation",
         title:"Consultation Anesthésie",
         date:"J-10",
         conseils:"Emmener résultats prise de sang",
@@ -25,7 +25,7 @@ angular.module('clientApp')
       },
 
       {
-        type:"rdv_medic",
+        type:"entree",
         title:"Préadmission",
         date:"J-1",
         conseils:"Emmener carte nationale d'identité et carte vitale",
@@ -34,7 +34,7 @@ angular.module('clientApp')
       },
 
       {
-        type:"prep_soap_shower",
+        type:"douche",
         title:"Douche",
         date:"J-0",
         conseils:"Douche savon standard",
@@ -42,7 +42,7 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"empty_stomac",
+        type:"repas",
         title:"A jeun",
         date:"J-0 6H",
         conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
@@ -50,7 +50,7 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"prep_beta_shower",
+        type:"douche",
         title:"Douche et shampoing Bétadine",
         date:"J-0 10H",
         conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
@@ -58,7 +58,7 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"intervention",
+        type:"operation",
         title:"Intervention cataracte",
         date:"J-0 15h",
         conseils:"",
@@ -66,7 +66,7 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"exit",
+        type:"sortie",
         title:"Sortie",
         date:"J-0 15H",
         conseils:"",
@@ -74,7 +74,7 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"rdv_medic",
+        type:"consultation",
         title:"Consultation ophtalmo controle",
         date:"J1 9H",
         conseils:"",
@@ -82,14 +82,14 @@ angular.module('clientApp')
         contact:""
       },
       {
-        type:"rdv_medic",
+        type:"consultation",
         title:"Consultation ophtalmo decontrole",
         date:"J+30 9H",
         conseils:"",
         localisation:"",
         contact:""
       }
-      
+
     ];
   }
 );
