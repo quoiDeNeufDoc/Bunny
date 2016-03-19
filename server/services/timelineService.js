@@ -95,7 +95,6 @@ app.get('/api/users/v1.0/timeline',  function (req, res, next) {
 });
 
 app.post('/api/users/v1.0/timeline', function (req, res, next) {
-	console.log("shdvclkjwdfhvljkdfhvlkjwfhvlkjdfhvjkldfhvjlkdfh");
-	smsService.sendSms("0689747249", "Vous avez recu une nouvelle notifications http://192.168.43.190:8000/timeline" )) {
+	smsService.sendSms("0689747249", "Vous avez recu une nouvelle notifications http://169.254.127.165:9000/timeline" )) {
 	res.status(200).end();
 });
