@@ -17,6 +17,46 @@ angular.module('clientApp').service('loginService', [
          * Encodes a string in base64
          * @param {String} input The string to encode in base64.
          */
+
+        this.getUsers = function() {
+
+        	var deferred = $q.defer();
+
+        	$http({ 
+				method: 'GET',
+				url: that.url+'/api/users/v1.0/users',
+				headers: { 	'Accept': 'application/json'}
+			})
+
+			// Handle success response
+			.success(function (response) {
+				// Resolve the promise
+				deferred.resolve(response);
+			})
+
+			// Handle error response
+			.error(function (data) 
+			{
+				console.error("[LoginService] login");
+				console.error(data);
+				deferred.reject(data);
+			});
+        		/*window.setTimeout(function() {
+        			var persons = new Array();
+        			var person = {firstName : "Kiki", lastName: "fiki"};
+        			var person2 = {firstName : "Kiki2", lastName: "fiki2"};
+        			var person3 = {firstName : "Kiki3", lastName: "fiki3"};
+        			persons.push(person);
+        			persons.push(person2);
+        			persons.push(person3);
+        			deferred.resolve(persons);
+        		}, 3000);*/
+
+        		console.log("YEAH");
+
+        	return deferred.promise;
+        }
+
         this.encode = function (input) {
         	var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 

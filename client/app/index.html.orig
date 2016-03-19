@@ -8,12 +8,11 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <!-- endbuild -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
   </head>
   <body ng-app="clientApp">
     <!--[if lte IE 8]>
@@ -40,6 +39,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/about">About</a></li>
               <!-- <li><a ng-href="#/">Contact</a></li> -->
             </ul>
           </div>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="container">
-    <div style="height: 100%" ng-view=""></div>
+    <div ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -88,12 +88,18 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/MyUserCtrl.js"></script>
-        <script src="scripts/controllers/timeline.js"></script>
-        <script src="scripts/services/loginService.js"></script>
+<<<<<<< HEAD
+        <script src="scripts/services/loginService.js"></script> 
         <script src="scripts/services/localStorageService.js"></script>
 
 
-        <script src="scripts/models/person.js"></script>
+        <script src="scripts/models/person.js"></script>   
+        <!-- endbuild -->
+=======
+        <script src="scripts/controllers/timeline.js"></script>
+        <script src="scripts/services/loginService.js"></script>
+         <script src="scripts/services/localStorageService.js"></script>
     <!-- endbuild -->
+>>>>>>> 4f1a11838b22327ec8ddaa9ecde574690fc7c350
 </body>
 </html>
