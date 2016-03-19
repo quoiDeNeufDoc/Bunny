@@ -15,6 +15,9 @@
     <!-- uses angular-scroll-animate to give it some pop -->
     <timeline-panel class="timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
       <div class="row">
+        <div class="col-md-3 hidden-xs" ng-if="event.icon_side === 'left'">
+          <img style="float:left; outline:12px solid #3C3F47; background-color:#3C3F47;" ng-src="images/{{event.type}}.svg" alt="Type of operation">
+        </div>
         <div class="col-md-9 col-xs-12">
             <span>
             <h4>{{event.title}}</h4>
@@ -25,8 +28,8 @@
             </p>
             </span>
         </div>
-        <div class="col-md-3 hidden-xs">
-          <img style="float:right; outline:14px solid #75B2E2; background-color:#75B2E2;" ng-src="images/{{event.type}}.svg" alt="Type of operation">
+        <div class="col-md-3 hidden-xs" ng-if="event.icon_side === undefined || event.icon_side === 'right'">
+          <img style="float:right; outline:12px solid #75B2E2; background-color:#75B2E2;" ng-src="images/{{event.type}}.svg" alt="Type of operation">
         </div>
       </div>
 
