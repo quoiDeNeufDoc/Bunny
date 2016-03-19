@@ -4,12 +4,22 @@ angular.module('clientApp')
 
 .controller('TimelineCtrl', function ($scope) {
 
+    $scope.now = Date.now();
+
+    $scope.getClasses = function(event){
+      if(event.data <= Date.now()){
+        return "timeline-transparent"
+      }else{
+        return "";
+      }
+    };
+
     $scope.events = [
 
       {
         type:"examen",
         title:"Prise de sang",
-        date:"J-15",
+        date:"1458021600000",
         conseils:"Emmener l'ordonnance",
         localisation:"",
         contact:"",
@@ -18,16 +28,15 @@ angular.module('clientApp')
       {
         type:"consultation",
         title:"Consultation Anesthésie",
-        date:"J-10",
+        date:"1458464400000",
         conseils:"Emmener résultats prise de sang",
         localisation:"",
         contact:""
       },
-
       {
         type:"admin",
         title:"Préadmission",
-        date:"J-1",
+        date:"1458468000000",
         conseils:"Emmener carte nationale d'identité et carte vitale",
         localisation:"",
         contact:"",
@@ -37,7 +46,7 @@ angular.module('clientApp')
       {
         type:"douche",
         title:"Douche",
-        date:"J-0",
+        date:"1459364400000",
         conseils:"Douche savon standard",
         localisation:"",
         contact:""
@@ -45,7 +54,7 @@ angular.module('clientApp')
       {
         type:"repas",
         title:"A jeun",
-        date:"J-0 6H",
+        date:"1459396800000",
         conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
         localisation:"",
         contact:"",
@@ -53,40 +62,41 @@ angular.module('clientApp')
       },
       {
         type:"douche",
-        title:"Douche et shampoing Bétadine",
-        date:"J-0 10H",
+        title:"Douche et shampoing à la Bétadine",
+        date:"1459396800000",
         conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
         localisation:"",
         contact:""
       },
       {
         type:"operation",
-        title:"Intervention cataracte",
-        date:"J-0 15h",
-        conseils:"",
+        title:"Admission dans le service",
+        date:"1459411200000",
+        conseils:"En vue de l'opération",
         localisation:"",
-        contact:""
+        contact:"",
+        bigday:true
       },
       {
         type:"sortie",
-        title:"Sortie",
-        date:"J-0 15H",
+        title:"Retour à domicile",
+        date:"1459429200000",
         conseils:"",
         localisation:"",
         contact:""
       },
       {
         type:"consultation",
-        title:"Consultation ophtalmo controle",
-        date:"J1 9H",
+        title:"Consultation ophtalmogue pour contrôle",
+        date:"1459494000000",
         conseils:"",
         localisation:"",
         contact:""
       },
       {
         type:"consultation",
-        title:"Consultation ophtalmo decontrole",
-        date:"J+30 9H",
+        title:"Consultation ophtalmologue pour contrôle",
+        date:"1462172400000",
         conseils:"",
         localisation:"",
         contact:""
