@@ -27,12 +27,13 @@ app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res,
  	var token = randomString.generate(4);
 
 	console.log('[AUTH_SERVICE] Receive /api/authenticate/v1.0/sendAuthTokenNotification request for user "' + phone + '"');
-
+	console.log('[AUTH_SERVICE] token ' + token);
 	dbService.getUser({ phone:phone })
 	.then(function(user) {
 		if (user) {
 			console.log('[AUTH_SERVICE] -- Already registered user');
-			return Promise.resolve();
+			user.token = token;
+			return dbService.setUser(user);
 		}
 		else {
 			console.log('[AUTH_SERVICE] -- Create user in DB');

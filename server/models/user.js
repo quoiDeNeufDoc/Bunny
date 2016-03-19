@@ -9,5 +9,4 @@ module.exports = mongoose.model('User', {
 	secuId: String,
 	closeRelatives: {type: Array},
 	messages: {type: Array}
-
 });

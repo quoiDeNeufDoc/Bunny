@@ -10,9 +10,10 @@ var dbService = require('./dbService');
 console.log("[MESSAGE_SERVICE] ==== STARTING ====");
 
 var sendNotifications = function(user) {
+	console.info('[SUBSCRIBE_SERVICE] -- Send notifications');
 	var userRelatives = user.closeRelatives;
 	userRelatives.forEach(function(userRelative) {
-		console.log("relative "+userRelative);
+		console.log("relative "+userRelative.name);
 	});
 }
 
