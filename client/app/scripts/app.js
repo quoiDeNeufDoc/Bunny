@@ -26,6 +26,9 @@ angular
       .when('/myUser', {
         templateUrl: 'views/myUser.html'
       })
+      .when('/userDetails', {
+        templateUrl: 'views/userDetails.html'
+      })
       .when('/timeline', {
         templateUrl: 'views/timeline.html',
         controller: 'TimelineCtrl',
