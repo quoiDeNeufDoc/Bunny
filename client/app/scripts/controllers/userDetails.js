@@ -19,7 +19,7 @@ angular.module('clientApp').controller('userDetailsController', [
 		$scope.firstName = $scope.person.firstName;
 		$scope.lastName = $scope.person.lastName;
 		$scope.startPhone = phone.substring(0, 2);
-		$scope.endPhone = phone.substring(2);
+		$scope.endPhone = phone.substr(2);
 
         console.log('[userDetailsController]');
         console.log($scope.person);
