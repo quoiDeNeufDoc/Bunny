@@ -29,7 +29,7 @@ angular.module('clientApp').service('loginService', [
 
         	var deferred = $q.defer();
 
-        	/*$http({
+        	/*$http({ 
 				method: 'GET',
 				url: that.url+'/api/users/v1.0/users',
 				headers: { 	'Accept': 'application/json'}
@@ -44,7 +44,7 @@ angular.module('clientApp').service('loginService', [
 			})
 
 			// Handle error response
-			.error(function (data)
+			.error(function (data) 
 			{
 				console.error("[LoginService] login");
 				console.error(data);
@@ -52,16 +52,14 @@ angular.module('clientApp').service('loginService', [
 			});*/
         		window.setTimeout(function() {
         			var persons = new Array();
-        			var person = {firstName : "Daffy", lastName: "Duck"};
-        			var person2 = {firstName : "Bugs", lastName: "Bunny"};
-        			var person3 = {firstName : "Elmer", lastName: "Fudd"};
-              var person4 = {firstName : "Sam", lastName: "Le Pirate"};
-              var person5 = {firstName : "Charlie", lastName: "Le Coq"};
+        			var person = {firstName : "Mathieu", lastName: "Cordebard"};
+        			var person2 = {firstName : "Dobromir", lastName: "Nikolov"};
+        			var person3 = {firstName : "Cedric", lastName: "Simon"};
+        			var person4 = {firstName : "Emmanuel", lastName: "Helbert"};
         			persons.push(person);
         			persons.push(person2);
         			persons.push(person3);
-              persons.push(person4);
-              persons.push(person5);
+        			persons.push(person4);
         			deferred.resolve(persons);
         		}, 3000);
 
@@ -74,14 +72,14 @@ angular.module('clientApp').service('loginService', [
         	console.log("[LoginService] updateUser");
 			console.log(person);
 
-
+			
 			//var deferred = $q.defer();
 
 			// Call the authenticate webService
-			$http({
+			$http({ 
 				method: 'POST',
 				url: that.url+'/api/users/v1.0/timeline',
-				headers: {
+				headers: { 	
 					'Accept': 'application/json',
 					'Authorization': 'Bearer '+ that.user.token
 				},
@@ -93,7 +91,7 @@ angular.module('clientApp').service('loginService', [
 				deferred.resolve(response);
 			})
 			// Handle error response
-			.error(function (data)
+			.error(function (data) 
 			{
 				console.error("[LoginService] updateUser");
 				console.error(data);
@@ -142,7 +140,7 @@ angular.module('clientApp').service('loginService', [
 			var deferred = $q.defer();
 
 			// Call the authenticate webService
-			$http({
+			$http({ 
 				method: 'POST',
 				url: that.url+'/api/authenticate/v1.0/sendAuthTokenNotification',
 				headers: { 	'Accept': 'application/json'},
@@ -156,7 +154,7 @@ angular.module('clientApp').service('loginService', [
 			})
 
 			// Handle error response
-			.error(function (data)
+			.error(function (data) 
 			{
 				console.error("[LoginService] login");
 				console.error(data);
@@ -173,11 +171,11 @@ angular.module('clientApp').service('loginService', [
 			var deferred = $q.defer();
 
 			// Call the authenticate webService
-			$http({
+			$http({ 
 				method: 'GET',
 				withCredentials: true,
 				url: that.url+'/api/authenticate/v1.0/login',
-				headers: { 	'Authorization': 'Basic '+this.encode(user.telephone+':'+user.code),
+				headers: { 	'Authorization': 'Basic '+this.encode(user.telephone+':'+user.code), 
 							'Accept': 'application/json'
 				}
 			})
@@ -191,7 +189,7 @@ angular.module('clientApp').service('loginService', [
 				deferred.resolve(response);
 			})
 			// Handle error response
-			.error(function (data)
+			.error(function (data) 
 			{
 				console.error("[LoginService] login");
 				console.error(data);
@@ -201,7 +199,7 @@ angular.module('clientApp').service('loginService', [
 			return deferred.promise;
 		}
 
-
+		
 
 		/*this.updateUser = function(user) {
 			console.log("[LoginService] updateUser");
@@ -212,10 +210,10 @@ angular.module('clientApp').service('loginService', [
 			var deferred = $q.defer();
 
 			// Call the authenticate webService
-			$http({
+			$http({ 
 				method: 'POST',
 				url: that.url+'/api/users/v1.0/users',
-				headers: {
+				headers: { 	
 					'Accept': 'application/json',
 					'Authorization': 'Bearer '+ that.user.token
 				},
@@ -228,7 +226,7 @@ angular.module('clientApp').service('loginService', [
 				deferred.resolve(response);
 			})
 			// Handle error response
-			.error(function (data)
+			.error(function (data) 
 			{
 				console.error("[LoginService] updateUser");
 				console.error(data);
