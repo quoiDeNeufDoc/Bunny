@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-timeline'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +29,11 @@ angular
         templateUrl: 'views/myUser.html',
         controller: 'myUserCtrl',
         controllerAs: 'myUser'
+      })
+      .when('/timeline', {
+        templateUrl: 'views/timeline.html',
+        controller: 'TimelineCtrl',
+        controllerAs: 'timeline'
       })
       .otherwise({
         redirectTo: '/'
