@@ -64,7 +64,7 @@
 <div style="height:100%" ng-controller="MainCtrl">
   <div class="loading-screen transition" ng-hide="!isLoading"><img src="images/logo2.svg" /></div>
 
-    <img ng-src="/images/admin.svg"/>
+    <!-- <img ng-src="/images/admin.svg"/> -->
 
   <div id="logincard" class="login-container flip-container transition" ng-show="!isLoading">
     <div id="logincard" class="flip-container">
@@ -99,22 +99,21 @@
                   <div class="form-group">
                     <label >Type operation</label>
                     <select class="form-control" ng-model="chosenPerson.typeOperation">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option>Appendix surgery</option>
+                      <option>Breast surgery</option>
+                      <option>Hand Surgery</option>
+                      <option>Neurosurgery</option>
+                      <option>Orthopedic Surgery</option>
                     </select>
                   </div>
                   <button type="submit" class="btn btn-default" ng-click="sendForm(chosenPerson)">Submit</button>
                   <label action="#" class="btn btn-default" class="cancel-button" ng-click="cancel()">Cancel</button>
                 </form>
-                
               </div>
-            <div ng-if="chosenPerson.isInit">
+            <!-- <div ng-if="chosenPerson.isInit">
               <h3>{{chosenPerson.firstName}} {{chosenPerson.lastName}}</h3>
               <h3>{{chosenPerson.phone}}</h3>
               <h3>{{chosenPerson.typeOperation}}</h3>
-            </div>
+            </div> -->
           </div>
 </div>

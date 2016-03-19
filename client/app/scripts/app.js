@@ -17,14 +17,21 @@ angular
     'ngSanitize',
     'ngTouch',
     'angular-timeline'
+
   ])
-  .config(function ($routeProvider) {
+  .config(
+
+    function ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html'
       })
       .when('/myUser', {
         templateUrl: 'views/myUser.html'
+      })
+      .when('/userDetails', {
+        templateUrl: 'views/userDetails.html'
       })
       .when('/timeline', {
         templateUrl: 'views/timeline.html',

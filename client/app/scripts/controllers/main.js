@@ -35,8 +35,15 @@ angular.module('clientApp').controller('MainCtrl', [
 
 		$scope.seePersonDetails = function(person) {
 			console.log(person);
-			$scope.chosenPerson = person;
-			document.querySelector("#logincard").classList.toggle("flip");
+
+			if (person.isInit) {
+				loginService.setUser(person);
+				window.location.href = "http://" + window.location.hostname + ":9000/#/userDetails";
+			}
+			else {
+				$scope.chosenPerson = person;
+				document.querySelector("#logincard").classList.toggle("flip");
+			}
 		}
 
     	/*$scope.sendLoginForm = function(user) {
@@ -83,6 +90,8 @@ angular.module('clientApp').controller('MainCtrl', [
     			$scope.persons[index] = chosenPerson;
     			$scope.persons[index].isInit = true;
     		}
+
+    		loginService.updateUser(chosenPerson);
 
     		document.querySelector("#logincard").classList.toggle("flip");
     	}

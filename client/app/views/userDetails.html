@@ -1,0 +1,29 @@
+<div class="userDetails" ng-controller="userDetailsController">
+	<div id="leftArea">
+		<img ng-src="/images/bgAdmin.svg"/>
+		<div id="container">	
+			<div id="name" class="rounder">
+				<img ng-src="/images/user.svg" style="height:52px;margin:15px 15px">
+				<span id='title'>Nom et prénom du patient</span>
+				<div id='label'><span id="blue">{{name}}</span> <span id="grey">{{name}}</span></div>
+			</div>
+			<div id="phone" class="rounder">
+				<img ng-src="/images/mobile.svg" style="height:52px;margin:15px 15px">
+				<span id='title'>Téléphone mobile</span>
+				<div id='label'><span id="blue">{{firstname}}</span> <span id="grey">{{lastname}}</span></div>
+			</div>
+			<div id="intervention" class="rounder">
+				<img ng-src="/images/intervention.svg" style="height:52px;margin:15px 15px">
+				<span id='title'>Type de l'opération</span>
+				<div id='label'>{{operation}}</div>
+			</div>
+			<div id="date" class="rounder">
+				<img ng-src="/images/date.svg" style="height:52px;margin:15px 15px">
+				<span id='title'>Date de l'opération</span>
+				<div id='label'>{{date}}</div>
+			</div>
+		</div>
+	</div>
+	<div id="rightArea">
+	</div>
+</div>
