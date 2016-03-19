@@ -114,7 +114,7 @@ html, body {
 
 .flip-container, .front, .back {
   width: 350px;
-  height: 425px;;
+  height: 475px;
 }
 
 .flipper {
@@ -132,6 +132,7 @@ html, body {
     font-weight: 400;
     background-color: white;
     text-align: center;
+    overflow-y: auto;
 }
 
 .front {
