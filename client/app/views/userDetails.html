@@ -1,8 +1,8 @@
-<div class="userDetails" ng-controller="userDetailsController">
-	<div id="leftArea">
+<div class="userDetails" >
+	<div id="leftArea" ng-controller="userDetailsController">
 	left
 	</div>
-	<div id="rightArea">
-	right
+	<div id="rightArea" ng-controller="TimelineCtrl">
+		<div ng-include src="'views/timeline.html'"></div>
 	</div>
 </div>
