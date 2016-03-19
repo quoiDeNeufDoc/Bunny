@@ -6,6 +6,6 @@ module.exports =
 	
 	'http': { 
 		'port': 8080,
-		'allowedOrigins': [ 'http://localhost:80', 'https://localhost:80']
+		'allowedOrigins': [ 'http://localhost:80', 'https://localhost:80', 'http://localhost:9000']
 	}
 };
