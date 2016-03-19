@@ -85,7 +85,8 @@ html, body {
 }
 
 .container {
-  height: calc(100% - 125px);
+  height: 100%;
+  padding-top: 50px;
   width: 100%;
 }
 
