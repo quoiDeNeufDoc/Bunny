@@ -1,7 +1,7 @@
 Elmer
 -----
 
-Elmer is a mobile app for nurses or praticians.
+Elmer is a simple QR Code scanning app
 
--> Scan QR Code
--> Send text or voice message
+* Scan QR Code
+* Open URL
