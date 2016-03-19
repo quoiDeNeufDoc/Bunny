@@ -1,10 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
-
 @import "timeline.scss";
-@import "userDetails.scss";
+// endbower
 
 .browsehappy {
   margin: 0.2em 0;
@@ -24,7 +22,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 
 /* Custom page header */
 .header {
@@ -71,6 +68,28 @@ body {
   }
 }
 
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
 
 
 
@@ -86,7 +105,6 @@ html, body {
 
 .container {
   height: calc(100% - 125px);
-  width: 100%;
 }
 
 
@@ -113,7 +131,7 @@ html, body {
 
 .flip-container, .front, .back {
   width: 350px;
-  height: 425px;;
+  height: 350px;
 }
 
 .flipper {
@@ -145,6 +163,7 @@ html, body {
   text-align:center;
 }
 
+<<<<<<< HEAD
 .loading-screen {
   width: 100%;
   height: 100%;
@@ -154,12 +173,14 @@ html, body {
   top: 0;
   background-color: white;
 }
+
 .loading-screen > img {
   display: block;
   margin: auto;
   width: 100%;
   height: 100%;
 }
+
 .login-container {
   width: 350px;
   margin: auto;
@@ -168,13 +189,11 @@ html, body {
 
 .person-container {
   border : 1px solid grey;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .person-data {
   border-bottom: 1px solid grey;
-  padding: 2px 6px 8px;
+  padding: 6px;
 }
 
 .person-data:hover {
@@ -205,16 +224,10 @@ html, body {
 .cancel-button {
   margin-left: 20px;
 }
-
-.qdnd-grey {
-  font-family: Roboto, sans-serif;
-  font-size: 2em;
-  color: #3C3F47;
+=======
+.login-container {
+  width: 350px;
+  margin: auto;
 }
 
-.qdnd-blue {
-  font-family: Roboto, sans-serif;
-  font-size: 2em;
-  color: #75B2E2;
-}
-
+>>>>>>> 423db97f40b91bed8c812a59e4a1f5afe8cc8066
