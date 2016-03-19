@@ -17,6 +17,23 @@ var getUser = function(query, fields) {
 	});
 }
 
+var getUsers = function() {
+	return new Promise(function(resolve, reject) {
+		UserModel.find({}, function (err, users) {
+			if (!err) {
+				if (!users) console.log('[DB_SERVICE] -- Users not found in DB');
+				else console.log('[DB_SERVICE] -- Get users from DB success');
+				resolve(users);
+			}
+			else {
+				var errorMessage = 'Get users from DB failure' + err;
+				console.log('[DB_SERVICE] -- ' + errorMessage);
+				reject(new Error(errorMessage));
+			}
+		});
+	});
+}
+
 var setUser = function(user) { 
 	return new Promise(function(resolve, reject) {
 		user.save(function(err, usr) {

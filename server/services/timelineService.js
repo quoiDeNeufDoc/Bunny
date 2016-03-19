@@ -1,4 +1,5 @@
 var httpService = require('./httpService');
+var smsService = require('./smsService');
 var app = httpService.app;
 
 console.log("[TIMELINE_SERVICE] ==== STARTING ====");
@@ -91,4 +92,13 @@ var toto = [
 
 app.get('/api/users/v1.0/timeline',  function (req, res, next) {
 	res.status(200).send(toto).end();
+});
+
+app.post('api/users/v1.0/timeline',function (req, res, next) {
+
+	var date = req.body.date;
+	var intervention = req.body.intervention;
+
+	smsService.sendSms("0689747249", "Vous avez recu une nouvelle notifications")) {
+	res.status(200).send().end();
 });
