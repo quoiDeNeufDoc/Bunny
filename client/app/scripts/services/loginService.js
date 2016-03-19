@@ -74,14 +74,14 @@ angular.module('clientApp').service('loginService', [
 			//var deferred = $q.defer();
 
 			// Call the authenticate webService
-			/*$http({ 
+			$http({ 
 				method: 'POST',
-				url: that.url+'/api/users/v1.0/users',
+				url: that.url+'/api/users/v1.0/timeline',
 				headers: { 	
 					'Accept': 'application/json',
 					'Authorization': 'Bearer '+ that.user.token
 				},
-				data: user
+				data: {}
 			})
 			// Handle success response
 			.success(function (response) {
@@ -94,7 +94,7 @@ angular.module('clientApp').service('loginService', [
 				console.error("[LoginService] updateUser");
 				console.error(data);
 				deferred.reject(data);
-			});*/
+			});
 
 			//return deferred.promise;
         }
