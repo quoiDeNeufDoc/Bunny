@@ -6,7 +6,7 @@ module.exports =
 	
 	'http': { 
 		'port': 8080,
-		'allowedOrigins': [ 'http://localhost:80', 'https://localhost:80', 'http://169.254.127.165:9000', 'http://169.254.127.166:9000', 'http://169.254.127.166', 'http://localhost:9000', "http://192.168.43.177:9000"]
+		'allowedOrigins': [ 'http://localhost:80', 'https://localhost:80', 'http://169.254.127.165:9000', 'http://169.254.127.167:9000', 'http://169.254.127.164:9000',, 'http://169.254.127.166:9000', 'http://169.254.127.166', 'http://localhost:9000', "http://192.168.43.177:9000"]
 	},
 	'emailServer':
 	{
