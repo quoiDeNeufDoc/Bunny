@@ -12,9 +12,9 @@ angular.module('clientApp')
         date:"J-15",
         conseils:"Emmener l'ordonnance",
         localisation:"",
-        contact:""
+        contact:"",
+        icon_side:"left"
       },
-
       {
         type:"consultation",
         title:"Consultation Anesthésie",
@@ -25,12 +25,13 @@ angular.module('clientApp')
       },
 
       {
-        type:"entree",
+        type:"admin",
         title:"Préadmission",
         date:"J-1",
         conseils:"Emmener carte nationale d'identité et carte vitale",
         localisation:"",
-        contact:""
+        contact:"",
+        icon_side:"left"
       },
 
       {
@@ -47,7 +48,8 @@ angular.module('clientApp')
         date:"J-0 6H",
         conseils:"Pas de tabac, pas d'alcool, pas de nourriture",
         localisation:"",
-        contact:""
+        contact:"",
+        icon_side:"left"
       },
       {
         type:"douche",
