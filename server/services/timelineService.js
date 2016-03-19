@@ -99,6 +99,7 @@ app.post('api/users/v1.0/timeline',function (req, res, next) {
 	var date = req.body.date;
 	var intervention = req.body.intervention;
 
-	smsService.sendSms("0689747249", "Vous avez recu une nouvelle notifications")) {
+	smsService.sendSms("0689747249", "Vous avez recu une nouvelle notifications http://192.168.43.190:8000/timeline" )) {
+	
 	res.status(200).send().end();
 });
