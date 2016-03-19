@@ -48,7 +48,6 @@ var start = function (httpConfig) {
 					userService.getUser({ phone: phone }, 'phone token')
 					.then(function(user) {
 						if (user) {
-							console.error("jkhjlkhjk "+token+" "+user.token)
 							if (user.token != token) {
 								console.log("[HTTP_SERVICE] -- BasicStrategy checkUserAuth('" + phone + "') wrongToken");
 								return done('wrongToken', null);
@@ -61,7 +60,7 @@ var start = function (httpConfig) {
 					})
 					.catch(function(error) {
 						console.error("[HTTP_SERVICE] -- BasicStrategy error " + error.message);
-        				return done(null, false);
+						return done(null, false);
 					})
 				}
 				catch (err) {
@@ -69,7 +68,32 @@ var start = function (httpConfig) {
         			return done(null, false); //returns a 401 to the caller
         		}
         	}
-        ));
+        	));
+
+		passport.use(new BearerStrategy (
+			function(token, done) {
+				try {
+        			// We attempt to decode the token the user sends with his requests
+        			var decoded = jwt.decode(token, tokenSecret);
+        			var phone = decoded.phone;
+
+        			userService.getUser({ phone: phone }, 'phone token')
+        			.then(function(user) {
+        				if (!user) 
+        					return done(null, false); 
+        				else
+        					return done(null, user);
+        			})
+        			.catch(function() {
+        				return done(null, false); //returns a 401 to the call
+        			});
+        		}
+        		catch (err) {
+        			console.error("[HTTP_SERVICE] -- BearerStrategy error " + err);
+        			return done(null, false); //returns a 401 to the caller
+        		}
+        	}
+        	));
 
 		// Start the http server
 		var server = http.createServer(app).listen(app.get('port'), function() {

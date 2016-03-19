@@ -1,12 +1,22 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div> -->
+<div class="login-form-container" ng-controller="MainCtrl">
+  <form novalidate>
+    <div class="form-group">
+      <label for="telNumber">Telephone number</label>
+      <input class="form-control" id="telNumber" placeholder="Your number" ng-model="user.telephone">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="sendLoginForm(user)">Submit</button>
+  </form>
 </div>
 
+<!-- 
 <div class="row marketing">
   <h4>HTML5 Boilerplate</h4>
   <p>
@@ -20,4 +30,4 @@
 
   <h4>Karma</h4>
   <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+</div> -->
