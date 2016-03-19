@@ -3,31 +3,44 @@
   "private": true,
   "name": "QuoiDeNeufDoc-Server",
   "description": "QuoiDeNeufDoc-Server",
-  "repository": "https://github.com/quoiDeNeufDoc/Bunny",
-  "devDependencies": {
-  	"express": "4.13.3",
-    "express-session":"1.12.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quoiDeNeufDoc/Bunny"
+  },
+  "dependencies": {
+    "express": "4.13.3",
+    "express-session": "1.12.1",
     "serve-static": "1.10.0",
     "morgan": "1.6.1",
     "body-parser": "1.14.2",
-    "cookie-parser":"1.4.0",
-  	"mongoose": "4.3.4",
+    "cookie-parser": "1.4.0",
+    "mongodb-core": "1.2.30",
+    "mongoose": "4.0.1",
     "mongoose-relationship": "0.1.4",
-  	"passport": "0.3.2",
+    "passport": "0.3.2",
     "passport-strategy": "1.0.0",
-  	"passport-local": "1.0.0",
+    "passport-local": "1.0.0",
     "passport-http": "0.3.0",
-    "passport-http-bearer" : "1.0.1",
-    "jwt-simple":"0.3.0",
-    "nodemailer":"2.0.0",
-    "randomstring":"1.1.3",
-    "body-parser": "1.14.2",
-
+    "passport-http-bearer": "1.0.1",
+    "jwt-simple": "0.3.0",
+    "nodemailer": "2.0.0",
+    "randomstring": "1.1.3",
     "grunt": "0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-ssh": "^0.12.3",
-
     "adb-cmd" : "0.0.1"
+  },
+  "scripts": {
+    "start": "node start.js"
+  },
+  "bugs": {
+    "url": "https://github.com/quoiDeNeufDoc/Bunny/issues"
+  },
+  "main": "start.js",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~4.13.4"
   }
 }

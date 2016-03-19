@@ -10,7 +10,7 @@ var logger = require("morgan");
 var serveStatic = require('serve-static');
 var session = require('express-session');
 var jwt = require('jwt-simple');
-var userService = require('./userService');
+var dbService = require('./dbService');
 var UserModel = require('../models/user');
 
 var app = express();
@@ -45,9 +45,10 @@ var start = function (httpConfig) {
 		passport.use(new BasicStrategy (
 			function(phone, token, done) {
 				try {
-					userService.getUser({ phone: phone }, 'phone token')
+					dbService.getUser({ phone: phone }, 'phone token')
 					.then(function(user) {
 						if (user) {
+							console.log(token + " " + user.token);
 							if (user.token != token) {
 								console.log("[HTTP_SERVICE] -- BasicStrategy checkUserAuth('" + phone + "') wrongToken");
 								return done('wrongToken', null);
@@ -77,7 +78,7 @@ var start = function (httpConfig) {
         			var decoded = jwt.decode(token, tokenSecret);
         			var phone = decoded.phone;
 
-        			userService.getUser({ phone: phone }, 'phone token')
+        			dbService.getUser({ phone: phone }, 'phone token')
         			.then(function(user) {
         				if (!user) 
         					return done(null, false); 

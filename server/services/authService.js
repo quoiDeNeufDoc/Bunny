@@ -1,6 +1,6 @@
 var UserModel = require('../models/user');
 var httpService = require('./httpService');
-var userService = require('./userService');
+var dbService = require('./dbService');
 var randomString = require("randomstring");
 
 var app = httpService.app;
@@ -13,6 +13,13 @@ console.log("[AUTH_SERVICE] ==== STARTING ====");
 /******************************************************************/
 /*  AUTHENTICATION                                                */
 /******************************************************************/
+app.post('/api/hello', function (req, res, next) {
+	console.log(req.body);
+	res.status(200).end();
+});
+
+
+
 app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res, next) {
 	
 	// Get the phone parameter
@@ -21,7 +28,7 @@ app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res,
 
 	console.log('[AUTH_SERVICE] Receive /api/authenticate/v1.0/sendAuthTokenNotification request for user "' + phone + '"');
 
-	userService.getUser({ phone:phone })
+	dbService.getUser({ phone:phone })
 	.then(function(user) {
 		if (user) {
 			console.log('[AUTH_SERVICE] -- Already registered user');
@@ -30,7 +37,7 @@ app.post('/api/authenticate/v1.0/sendAuthTokenNotification', function (req, res,
 		else {
 			console.log('[AUTH_SERVICE] -- Create user in DB');
 			var userModel = new UserModel ({ phone: phone, token: token });
-			return userService.setUser(userModel);
+			return dbService.setUser(userModel);
 		}
 	})
 	.then(function() {
@@ -57,33 +64,11 @@ app.get('/api/authenticate/v1.0/login', function (req, res, next) {
 	})(req, res, next);
 });
 
-//passport.authenticate('bearer', { session: false }),
-app.post('/api/authenticate/v1.0/users',  function (req, res, next) {
-	
-	// Get the phone parameter
-	var firstName = req.body.firstName;
- 	var lastName = req.body.lastName;
-	var secuNumber = req.body.secuNumber;
-	var closeRelatives = req.body.closeRelatives;
-    var phone = "0689747249";
 
-	console.log('[AUTH_SERVICE] Receive /api/authenticate/v1.0/users/ request for user "' + phone + '"');
-	userService.getUser({ phone:phone })
-	.then(function(user) {
-		user.firstName = firstName;
-		user.lastName = lastName;
-		user.secuNumber = secuNumber;
-		user.closeRelatives = closeRelatives;
-		return userService.setUser(user);
-	})
-	.then(function() {
-		res.status(200).end();
-	})
-	.catch(function(error) {
 
-	});
-	
-});
+
+
+
 
 
 console.log("[AUTH_SERVICE] ==== STARTED ====");
