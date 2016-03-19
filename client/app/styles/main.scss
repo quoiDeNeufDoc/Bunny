@@ -23,6 +23,7 @@ body {
   padding-right: 15px;
 }
 
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -131,7 +132,7 @@ html, body {
 
 .flip-container, .front, .back {
   width: 350px;
-  height: 350px;
+  height: 425px;;
 }
 
 .flipper {
@@ -186,11 +187,13 @@ html, body {
 
 .person-container {
   border : 1px solid grey;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .person-data {
   border-bottom: 1px solid grey;
-  padding: 6px;
+  padding: 2px 6px 8px;
 }
 
 .person-data:hover {
