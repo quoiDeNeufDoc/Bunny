@@ -2,16 +2,38 @@
 
 angular.module('clientApp')
 
-.controller('TimelineCtrl', function ($scope) {
+.controller('TimelineCtrl', function ($scope, $log) {
 
     $scope.now = Date.now();
 
-    $scope.getClasses = function(event){
-      if(event.data <= Date.now()){
-        return "timeline-transparent"
-      }else{
-        return "";
+    $scope.getClasses = function(index) {
+      var classes = "";
+      var event = $scope.events[index];
+      if (event.data <= Date.now()) {
+        classes += "timeline-transparent";
       }
+      return classes;
+    };
+
+
+    $scope.getStyle = function(index) {
+      var event = $scope.events[index];
+      $log.info(index);
+      if(index > 0 && index < $scope.events.length - 1){
+        var next = $scope.events[index + 1];
+        var delta = next.date - event.date;
+        delta = delta/80000;
+        $log.info(delta);
+        if(delta > 600){
+          delta = 600;
+        }
+        if(delta > 0) {
+          var str =  "height: " + delta + "px !important;";
+          $log.info(str);
+          return str;
+        }
+      }
+      return "";
     };
 
     $scope.events = [
