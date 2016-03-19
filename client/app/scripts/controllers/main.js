@@ -37,13 +37,13 @@ angular.module('clientApp').controller('MainCtrl', [
 			console.log(person);
 
 			if (person.isInit) {
-				
+				loginService.setUser(person);
+				window.location.href = "http://" + window.location.hostname + ":9000/#/userDetails";
 			}
 			else {
 				$scope.chosenPerson = person;
 				document.querySelector("#logincard").classList.toggle("flip");
 			}
-			
 		}
 
     	/*$scope.sendLoginForm = function(user) {

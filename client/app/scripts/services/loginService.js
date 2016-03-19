@@ -17,6 +17,13 @@ angular.module('clientApp').service('loginService', [
          * Encodes a string in base64
          * @param {String} input The string to encode in base64.
          */
+        this.getUser = function() {
+			return that.user;
+		}
+
+		this.setUser = function(user) {
+			that.user = user;
+		}
 
         this.getUsers = function() {
 
@@ -190,9 +197,7 @@ angular.module('clientApp').service('loginService', [
 			return deferred.promise;
 		}
 
-		this.getUser = function() {
-			return that.user;
-		}
+		
 
 		/*this.updateUser = function(user) {
 			console.log("[LoginService] updateUser");
