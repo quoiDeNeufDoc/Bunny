@@ -99,3 +99,47 @@ body {
 .login-telephone {
   width: 250px;
 }
+
+
+.flip-container {
+  perspective: 1000;
+  overflow: hidden;
+} 
+
+/* flip the pane when hovered */
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: 250px;
+  height: 350px;
+}
+
+.flipper {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0px; left: 0px;
+    backface-visibility: hidden;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: white;
+}
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  text-align:center;
+}
