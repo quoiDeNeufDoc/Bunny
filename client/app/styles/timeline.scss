@@ -59,7 +59,7 @@
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175); }
 .timeline li timeline-panel:before {
   position: absolute;
-  top: 35px;
+  top: 25px;
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
@@ -136,7 +136,7 @@ ul.timeline li timeline-panel:before {
   border-right-width: 15px;
   left: -15px;
   right: auto;
-  top: 46px;
+  top: 25px;
   border-right-color: #3C3F47;
 }
 ul.timeline li timeline-panel:after {
@@ -145,7 +145,7 @@ ul.timeline li timeline-panel:after {
   left: -14px;
   right: auto;
   border-right-color: #3C3F47;
-  top: 47px;
+  top: 25px;
 }
 img {
   vertical-align: middle; }
@@ -198,12 +198,12 @@ img {
 .timeline .tpoint {
   box-shadow: none !important;
   z-index: 100;
-  left:40px;
-  width:10px !important;
-  height:10px !important;
+  left:38px;
+  width:4px !important;
+  height: 4px !important;
   margin: auto;
   text-align: center;
-  background-color: red;
+  background-color: white;
 }
 
 .timeline li timeline-badge {
