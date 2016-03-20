@@ -19,7 +19,7 @@ div.userDetails {
 
 			.rounder {
 				position: relative;
-				width: 300px;
+				width: 270px;
 				height: 82px;
 				background: white;
 				border-radius: 10px;
@@ -35,7 +35,7 @@ div.userDetails {
 					position: absolute;
 					top: 33px;
 					left: 70px;
-					width: 300px;
+					width: 168px;
 					height: 29px;
 					color: grey;
 					font-size: 20px;
@@ -64,4 +64,17 @@ div.userDetails {
 .top-user-details {
 	height: 100px;
 	border-bottom: 2px solid #D6D6D6;
+}
+
+.user-details-input {
+	width: 100%;
+    margin-top: 4px;
+    height: 29px;
+    font-size: 15px;
+
+}
+
+select.user-details-input {
+	font-size: 15px;
+	color: #373942;
 }
