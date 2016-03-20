@@ -1,0 +1,91 @@
+div.users {
+
+	position:relative;
+	height:100%;
+	padding-left:400px;
+
+	#leftArea {
+		position:absolute;
+		top:0;left:0px;
+		background: #373942;
+		width:400px;
+		height:100%;
+
+		img {
+			position:absolute;
+			top:0; left:0;
+			height: 100%;
+		}
+
+		#search{
+			position: absolute;
+			top: 50px;
+			left: 20px;
+			width: 40px;
+			height: 40px;
+			background: #75b2e2;
+
+			#searchIcon {
+				position: absolute;
+				top: 5px;
+				left: 4px;
+				height: 30px;
+			}
+
+		}
+
+		#filter {
+			position: absolute;
+			top: 50px;
+			left: 60px;
+			width: 310px;
+			height: 40px;
+			font-size: 20px;
+			color: #75b2e2;
+			padding-left: 3px;
+		}
+	}
+
+	#rightArea {
+		overflow: auto;
+		height: 100%;
+
+		#container { 
+			margin:0 auto;
+			width: 640px;
+			height:100px;
+		}
+	}
+
+}
+
+#rounder {
+	position: relative;
+    width: 300px;
+    height: 82px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 22px 20px 0 0;
+    box-shadow: 0px 0px 30px 10px #DDDDDD;
+
+	#title {
+		position: absolute;
+		top:15px; left:70px;
+		color:black;
+	}
+
+	#label {
+		position: absolute;
+		top: 33px;
+		left: 70px;
+		width: 300px;
+		height: 29px;
+		color: grey;
+		font-size: 20px;
+
+		#blue {
+			color:#75b2e2;
+		}
+	}
+}
