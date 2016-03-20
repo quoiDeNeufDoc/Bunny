@@ -1,2 +1,16 @@
-<div class="users">
+<div class="users" ng-controller="usersController">
+	<div id="leftArea">
+		<img ng-src="/images/bgAdmin.svg"/>
+		<div id="search"><img id="searchIcon" ng-src="/images/search.svg"/></div>
+		<input id="filter" type="text" ng-model="filter" placeholder="Rechercher un patient"/>
+	</div>
+	<div id="rightArea">
+		<div id="container">
+			<div ng-repeat="user in users | filter:filter" id="rounder">
+				<img ng-src="/images/user.svg" style="height:52px;margin:15px 15px">
+				<span id='title'>Nom et prénom du patient</span>
+				<div id='label'><span id="blue">{{user.firstname}}</span> {{user.lastname}}</span></div>
+			</div>
+		</div>
+	</div>
 </div>
