@@ -4,8 +4,9 @@
 angular.module('clientApp').controller('usersController', [
 	
 	'$scope', 
+	'loginService',
 
-	function($scope) {
+	function($scope, loginService) {
 		$scope.users = [
 			{ firstname:'Jean Claude', lastname:'Dusse'},
 			{ firstname:'Lucien', lastname:' Bigard'},
@@ -20,4 +21,9 @@ angular.module('clientApp').controller('usersController', [
 			{ firstname:'Pierre', lastname:'Yves de Tassigny'},
 			{ firstname:'Jean', lastname:'de laFontaine'}
 		];	
+
+		$scope.click = function(user) {
+			loginService.setUser(user);
+			window.location.href = "http://" + window.location.hostname + ":9000/#/userDetails";
+		}
 }]);
