@@ -130,7 +130,8 @@ ul.timeline li timeline-badge {
   margin-left: 0;
   top: 36px; }
 ul.timeline li timeline-panel {
-  float: right; }
+  float: right;
+  left:-20px !important; }
 ul.timeline li timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
@@ -384,4 +385,13 @@ img {
     transform: scale(1); }
 }
 
+.popup-timeline{
+  background-color: red;
+  position: fixed;
+  left:0;
+  right:0;
+  height: 100%;
+  width:100%;
+  z-index: 1000;
+}
 
