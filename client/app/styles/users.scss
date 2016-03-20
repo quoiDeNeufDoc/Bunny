@@ -2,14 +2,15 @@ div.users {
 
 	position:relative;
 	height:100%;
-	padding-left:400px;
+	padding-left:425px;
+	margin-top: 30px;
 
 	#leftArea {
 		position:absolute;
-		top:0;left:0px;
+		top:0;left:20px;
 		background: #373942;
 		width:400px;
-		height:100%;
+		height: calc(100% - 25px);
 
 		img {
 			position:absolute;

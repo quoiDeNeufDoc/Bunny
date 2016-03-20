@@ -1,15 +1,18 @@
 <div class="users" ng-controller="usersController">
-	<div id="leftArea">
-		<img ng-src="/images/bgAdmin.svg"/>
-		<div id="search"><img id="searchIcon" ng-src="/images/search.svg"/></div>
-		<input id="filter" type="text" ng-model="filter" placeholder="Rechercher un patient"/>
-	</div>
-	<div id="rightArea">
-		<div id="container">
-			<div ng-repeat="user in users | filter:filter" id="rounder" ng-click="click(user);">
-				<img ng-src="/images/user.svg" style="height:52px;margin:15px 15px">
-				<span id='title'>Nom et prénom du patient</span>
-				<div id='label'><span id="blue">{{user.firstname}}</span> {{user.lastname}}</span></div>
+	<div class="loading-screen transition" ng-hide="!isLoading"></div>
+	<div class="transition" style="width: 100%; height:100%;" ng-show="!isLoading">
+		<div id="leftArea">
+			<img ng-src="/images/bgAdmin.svg"/>
+			<div id="search"><img id="searchIcon" ng-src="/images/search.svg"/></div>
+			<input id="filter" type="text" ng-model="filter" placeholder="Rechercher un patient"/>
+		</div>
+		<div id="rightArea">
+			<div id="container">
+				<div ng-repeat="user in users | filter:filter" id="rounder" ng-click="click(user);">
+					<img ng-src="/images/user.svg" style="height:52px;margin:15px 15px">
+					<span id='title'>Nom et prénom du patient</span>
+					<div id='label'><span id="blue">{{user.firstname}}</span> {{user.lastname}}</span></div>
+				</div>
 			</div>
 		</div>
 	</div>
