@@ -15,7 +15,7 @@
     <timeline-badge class="tpoint" when-visible="animateElementIn" when-not-visible="animateElementOut">
     </timeline-badge>
 
-    <h4 ng-if="notAlreadyDisplayed($index)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h4 ng-if="notAlreadyDisplayed($index)" ng-class="getClasses($index)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{event.date | date:'dd MMMM'}}
     </h4>
 
