@@ -9,9 +9,10 @@ angular.module('clientApp')
       $scope.getClasses = function (index) {
         var classes = "";
         var event = $scope.events[index];
-        if (event.data <= Date.now()) {
+        if (event.date <= Date.now()) {
           classes += "timeline-transparent";
         }
+        $log.info(classes);
         return classes;
       };
 

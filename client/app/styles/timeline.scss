@@ -236,7 +236,8 @@ img {
 }
 
 .timeline-transparent{
-  background-color: red;
+  -webkit-filter: opacity(15%);
+  filter: opacity(15%);
 }
 
 /*
@@ -382,3 +383,5 @@ img {
     -o-transform: scale(1);
     transform: scale(1); }
 }
+
+
