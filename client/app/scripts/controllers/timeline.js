@@ -18,12 +18,14 @@ angular.module('clientApp')
 
       $scope.notAlreadyDisplayed = function (index) {
         var event = $scope.events[index];
-        var edate = new Date(event.date/10);
-        var myDate =  edate.getDay() + "/m" + edate.getMonth();
+        var edate = new Date(parseInt(event.date));
+        var myDate =  edate.getDate() + "/m" + edate.getMonth();
+        $log.info(myDate);
         for (var i = 0; i < index; i++) {
           var previous = $scope.events[i];
-          var ldate = new Date(previous.date);
-          if ((ldate.getDate() + "/m" + ldate.getMonth()) === myDate) {
+          var ldate = new Date(parseInt(previous.date));
+          ldate = (ldate.getDate() + "/m" + ldate.getMonth());
+          if (ldate === myDate) {
             return false;
           }
         }
