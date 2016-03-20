@@ -12,18 +12,18 @@ angular.module('clientApp').controller('usersController', [
 		
 
 		$scope.users = [
-			{ firstname:'Jean Claude', lastname:'Dusse'},
-			{ firstname:'Lucien', lastname:' Bigard'},
-			{ firstname:'Emmanuelle', lastname:'Camomille'},
-			{ firstname:'Pierre', lastname:'Quiroule'},
-			{ firstname:'Hubert', lastname:'Lechat'},
-			{ firstname:'Rosy', lastname:'Alpub'},
-			{ firstname:'Dobromir', lastname:'Nikolov'},
-			{ firstname:'Jean Schmidt', lastname:'Schmidt'},
-			{ firstname:'Irène', lastname:'Clement'},
-			{ firstname:'Chantal', lastname:'Lobby'},
-			{ firstname:'Pierre', lastname:'Yves de Tassigny'},
-			{ firstname:'Jean', lastname:'de laFontaine'}
+			{ firstName:'Jean Claude', lastName:'Dusse'},
+			{ firstName:'Lucien', lastName:' Bigard'},
+			{ firstName:'Emmanuelle', lastName:'Camomille'},
+			{ firstName:'Pierre', lastName:'Quiroule'},
+			{ firstName:'Hubert', lastName:'Lechat'},
+			{ firstName:'Rosy', lastName:'Alpub'},
+			{ firstName:'Dobromir', lastName:'Nikolov'},
+			{ firstName:'Jean Schmidt', lastName:'Schmidt'},
+			{ firstName:'Irène', lastName:'Clement'},
+			{ firstName:'Chantal', lastName:'Lobby'},
+			{ firstName:'Pierre', lastName:'Yves de Tassigny'},
+			{ firstName:'Jean', lastName:'de laFontaine'}
 		];	
 
 		$scope.click = function(user) {
