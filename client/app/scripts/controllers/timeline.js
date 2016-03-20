@@ -9,13 +9,12 @@ angular.module('clientApp')
       if (window.location.hash.indexOf("userDetails") == -1) {
         $(".top-user-details").remove();
       }
-      
 
       $scope.getClasses = function (index) {
         var classes = "";
         var event = $scope.events[index];
         if (event.date <= Date.now()) {
-          classes += "timeline-transparent";
+          //classes += "timeline-transparent";
         }
         $log.info(classes);
         return classes;
@@ -64,7 +63,7 @@ angular.module('clientApp')
         {
           type: "examen",
           title: "Prise de sang",
-          date: "1458021600000",
+          date: "1458208800000",
           conseils: "Emmener l'ordonnance",
           localisation: "",
           contact: "",
@@ -73,7 +72,7 @@ angular.module('clientApp')
         {
           type: "consultation",
           title: "Consultation Anesthésie",
-          date: "1458464400000",
+          date: "1458900000000",
           conseils: "Emmener résultats prise de sang",
           localisation: "",
           contact: ""
@@ -81,7 +80,7 @@ angular.module('clientApp')
         {
           type: "admin",
           title: "Préadmission",
-          date: "1458468000000",
+          date: "1458900000000",
           conseils: "Emmener carte nationale d'identité et carte vitale",
           localisation: "",
           contact: "",
