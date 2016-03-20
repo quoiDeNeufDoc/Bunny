@@ -1,4 +1,4 @@
-<div class="userDetails" >
+<div class="userDetails">
 	<div id="leftArea" ng-controller="userDetailsController">
 		<img ng-src="/images/bgAdmin.svg"/>
 		<div id="container">	
@@ -31,7 +31,7 @@
                       <option>Orthopedic Surgery</option>
                     </select>
 				</div>
-				<div id='label' ng-hide="editable"><span id="blue">Cataract</span></div>
+				<div id='label' ng-hide="editable"><span id="blue">{{typeOperation}}</span></div>
 			</div>
 			<div id="date" class="rounder">
 				<img ng-src="/images/date.svg" style="height:52px;margin:15px 15px">
@@ -40,11 +40,11 @@
 					<input class="user-details-input" type="date" id="date-value"  ng-model="date" ng-change="dateChanged()">
 				</div>
 
-				<div id='label' ng-hide="editable"><span id="blue">20/03/2016<span></div>
+				<div id='label' ng-hide="editable"><span id="blue">{{date}}<span></div>
 			</div>
 		</div>
 	</div>
-	<div id="rightArea" ng-controller="TimelineCtrl">
-		<div ng-include src="'views/timeline.html'"></div>
+	<div id="rightArea" ng-controller="TimelineCtrl" style="visibility: hidden;">
+		<div ng-include src="'views/timeline.html'" ng-if="!editable"></div>
 	</div>
 </div

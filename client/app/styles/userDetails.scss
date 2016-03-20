@@ -78,3 +78,10 @@ select.user-details-input {
 	font-size: 15px;
 	color: #373942;
 }
+
+#leftArea.hideRight {
+
+	#rightArea {
+		visibility: hidden;
+	}
+}
