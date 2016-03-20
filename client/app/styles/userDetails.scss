@@ -7,7 +7,7 @@ div.userDetails {
 		top:0px;left:20px;
 		background: #373942;
 		width:400px;
-		height: calc(100% - 170px);
+		height: calc(100% - 20px);
 
 		img {
 			position:absolute;
@@ -57,7 +57,7 @@ div.userDetails {
 		margin-top: 30px;
 		padding: 0 80px 30px 500px;
 		overflow: auto;
-		height: calc(100% - 160px);
+		height: calc(100% - 20px);
 	}
 }
 
@@ -77,4 +77,11 @@ div.userDetails {
 select.user-details-input {
 	font-size: 15px;
 	color: #373942;
+}
+
+#leftArea.hideRight {
+
+	#rightArea {
+		visibility: hidden;
+	}
 }
