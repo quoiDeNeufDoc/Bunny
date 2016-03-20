@@ -115,7 +115,7 @@ html, body {
 
 .flip-container, .front, .back {
   width: 350px;
-  height: 475px;
+  height: 500px;
 }
 
 .flipper {
@@ -180,6 +180,7 @@ html, body {
   border : 1px solid grey;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .person-data {
