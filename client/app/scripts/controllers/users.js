@@ -7,6 +7,10 @@ angular.module('clientApp').controller('usersController', [
 	'loginService',
 
 	function($scope, loginService) {
+		$scope.isLoading = true;
+
+		
+
 		$scope.users = [
 			{ firstName:'Jean Claude', lastName:'Dusse'},
 			{ firstName:'Lucien', lastName:' Bigard'},
@@ -26,4 +30,12 @@ angular.module('clientApp').controller('usersController', [
 			loginService.setUser(user);
 			window.location.href = "http://" + window.location.hostname + ":9000/#/userDetails";
 		}
+
+		loginService.getUsers()
+    	.then(function() {	
+			$scope.isLoading = false;
+		})
+		.catch(function (error) {
+			console.error("[MainCtrl] getUsers error");
+		});
 }]);

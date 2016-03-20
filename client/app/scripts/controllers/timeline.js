@@ -6,6 +6,11 @@ angular.module('clientApp')
 
       $scope.now = Date.now();
 
+      if (window.location.hash.indexOf("userDetails") == -1) {
+        $(".top-user-details").remove();
+      }
+      
+
       $scope.getClasses = function (index) {
         var classes = "";
         var event = $scope.events[index];
