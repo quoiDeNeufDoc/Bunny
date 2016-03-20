@@ -19,16 +19,18 @@ angular.module('clientApp').controller('userDetailsController', [
 
 		$scope.firstName = $scope.person.firstName;
 		$scope.lastName = $scope.person.lastName;
-		$scope.phone = "";
-		$scope.typeOperation = "";
+		$scope.phone = "0663524173";
+		$scope.startPhone = $scope.phone.substring(0, 2);
+		$scope.endPhone = $scope.phone.substr(2);
+
+		$scope.typeOperation = "Cataract";
 		$scope.date = "";
 
 
 		$scope.phoneChanged = function(value) {
 			$scope.phone = $("#phone-input")[0].value;
 			if ($scope.phone && $scope.phone.length > 2) {
-			  	$scope.startPhone = $scope.phone.substring(0, 2);
-				$scope.endPhone = $scope.phone.substr(2);
+			  	
 			  }
 	          if ($scope.phone.length >= 9 && $scope.date && $scope.typeOperation) {
 	          		$scope.editable = false;
@@ -57,7 +59,7 @@ angular.module('clientApp').controller('userDetailsController', [
 	          		$scope.editable = false;
 	          		window.setTimeout(function() {
 	          			$("#rightArea").css("visibility", "visible");
-	          		}, 1500);
+	          		}, 1000);
 	          }
 		}
 
