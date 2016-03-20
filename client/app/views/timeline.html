@@ -1,5 +1,11 @@
 <br>
 
+<div class="companion">
+  <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+</div>
+<div class="companion-trait">
+</div>
+
 <timeline>
   <!-- can also hard-code to side="left" or side="right" -->
 
@@ -12,7 +18,6 @@
     <h4 ng-if="notAlreadyDisplayed($index)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{event.date | date:'dd MMMM'}}
     </h4>
-
 
     <timeline-panel style="{{getStyle($index)}}" ng-class="getClasses($index)" class="timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
       <div class="row">
@@ -43,4 +48,7 @@
 
     </timeline-panel>
   </timeline-event>
+
+  <img height="85px"/>
+
 </timeline>
