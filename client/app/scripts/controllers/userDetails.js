@@ -50,6 +50,10 @@ angular.module('clientApp').controller('userDetailsController', [
 	          }
 		}
 
+		/*$scope.goHome = function() {
+			window.location.href = "http://" + window.location.hostname + ":9000/#/home";
+		}*/
+
         console.log('[userDetailsController]');
         console.log($scope.person);
 }]);
