@@ -9,10 +9,9 @@
     <timeline-badge class="tpoint" when-visible="animateElementIn" when-not-visible="animateElementOut">
     </timeline-badge>
 
-    <!-- uses angular-scroll-animate to give it some pop -->
-    <!--<h4 ng-if="notAlreadyDisplayed($index)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      {{event.date | date:'dd/MM'}}
-    </h4>-->
+    <h4 ng-if="notAlreadyDisplayed($index)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {{event.date | date:'dd MMMM'}}
+    </h4>
 
 
     <timeline-panel style="{{getStyle($index)}}" ng-class="getClasses($index)" class="timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
